@@ -7,7 +7,8 @@ const TodoList = props => {
     const { 
         todos,
         handleAddTodo,
-        toggleCompleted
+        toggleCompleted,
+        clearCompleted
     } = props;
 
     return(
@@ -19,7 +20,10 @@ const TodoList = props => {
                             toggleCompleted={toggleCompleted}
                         />
             })}
-            <TodoForm handleAddTodo={handleAddTodo} />
+            <TodoForm
+                handleAddTodo={handleAddTodo} 
+                clearCompletedItems={clearCompleted}
+            />
         </div>
     );
 };

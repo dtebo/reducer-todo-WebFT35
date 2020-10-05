@@ -7,7 +7,10 @@ const initialValues = {
 };
 
 const TodoForm = props => {
-    const { handleAddTodo } = props;
+    const { 
+        handleAddTodo,
+        clearCompletedItems
+    } = props;
 
     const [values, handleChange] = useForm(initialValues);
 
@@ -27,9 +30,16 @@ const TodoForm = props => {
                         onChange={handleChange}
                     />
                 </label>
-                <button>Add Item</button>
                 <button
-                    onClick={() => console.log('Clear Completed: DT: ', 'Will clear completed todos...')}
+                    type='submit'
+                >
+                    Add Item
+                </button>
+                <button
+                    onClick={(e) => {
+                        e.preventDefault();
+                        clearCompletedItems();
+                    }}
                 >
                     Clear Completed
                 </button>

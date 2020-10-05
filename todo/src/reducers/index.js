@@ -40,11 +40,17 @@ export const reducer = (initialState, action) => {
                         return {
                             id: action.payload.id,
                             item: action.payload.item,
-                            completed: true
+                            completed: !todo.completed
                         };
                     }
 
                     return todo;
+                })
+            };
+        case "CLEAR_COMPLETED":
+            return {
+                todos: initialState.todos.filter(todo => {
+                    return !todo.completed;
                 })
             };
         case "GET_TODOS":

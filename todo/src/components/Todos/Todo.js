@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './todo.css';
+
 const Todo = props => {
     const { 
         todo,
@@ -12,7 +14,7 @@ const Todo = props => {
 
     return(
         <div
-            className='todo'
+            className={`todo${todo.completed ? ' completed' : ''}`}
             onClick={toggleCompletedItem}
         >
             {todo.item}
