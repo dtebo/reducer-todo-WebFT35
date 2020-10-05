@@ -22,6 +22,8 @@ export const state = {
 
 export const reducer = (initialState, action) => {
     switch(action.type){
+        case "GET_TODOS":
+            return initialState;
         default:
             return initialState;
     }
