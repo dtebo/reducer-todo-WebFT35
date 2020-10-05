@@ -1,6 +1,6 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 
-const initialState = {
+export const state = {
     todos: [
         {
             id: 1,
@@ -21,7 +21,7 @@ const initialState = {
 };
 
 export const reducer = (initialState, action) => {
-    switch(action){
+    switch(action.type){
         default:
             return initialState;
     }
