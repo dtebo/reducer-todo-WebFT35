@@ -14,7 +14,7 @@ function App() {
   const handleAddTodo = (e, todo) => {
     e.preventDefault();
 
-    dispatch({ type: 'ADD_TODO ', payload: todo });
+    dispatch({ type: 'ADD_TODO', payload: todo });
   };
 
   return (

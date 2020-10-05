@@ -28,6 +28,11 @@ const TodoForm = props => {
                     />
                 </label>
                 <button>Add Item</button>
+                <button
+                    onClick={() => console.log('Clear Completed: DT: ', 'Will clear completed todos...')}
+                >
+                    Clear Completed
+                </button>
             </form>
         </div>
     );
