@@ -7,12 +7,12 @@ const initialValues = {
 };
 
 const TodoForm = props => {
+    const { handleAddTodo } = props;
+
     const [values, handleChange] = useForm(initialValues);
 
     const handleSubmit = e => {
-        e.preventDefault();
-
-        
+        handleAddTodo(e, values.todo);
     };
 
     return(

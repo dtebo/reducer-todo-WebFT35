@@ -11,9 +11,18 @@ function App() {
     dispatch({ type: 'GET_TODOS' });
   });
   
+  const handleAddTodo = (e, todo) => {
+    e.preventDefault();
+
+    dispatch({ type: 'ADD_TODO ', payload: todo });
+  };
+
   return (
     <div className="App">
-      <TodoList todos={initialState.todos} />
+      <TodoList 
+        todos={initialState.todos}
+        handleAddTodo={handleAddTodo}
+      />
     </div>
   );
 }

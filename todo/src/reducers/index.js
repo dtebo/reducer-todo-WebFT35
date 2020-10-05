@@ -22,6 +22,17 @@ export const state = {
 
 export const reducer = (initialState, action) => {
     switch(action.type){
+        case "ADD_TODO":
+            return {
+                todos: [
+                    ...initialState.todos,
+                    {
+                        id: Date.now(),
+                        item: action.payload,
+                        completed: false
+                    }
+                ]
+            };
         case "GET_TODOS":
             return initialState;
         default:

@@ -4,14 +4,20 @@ import TodoForm from '../TodoForm/TodoForm';
 import Todo from './Todo';
 
 const TodoList = props => {
-    const { todos } = props;
+    const { 
+        todos,
+        handleAddTodo
+    } = props;
 
     return(
         <div className='todos'>
             {todos && todos.map((todo) => {
-                return <Todo todo={todo} />
+                return <Todo
+                            key={todo.id} 
+                            todo={todo}
+                        />
             })}
-            <TodoForm />
+            <TodoForm handleAddTodo={handleAddTodo} />
         </div>
     );
 };
