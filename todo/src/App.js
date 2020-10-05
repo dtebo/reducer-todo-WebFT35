@@ -9,6 +9,8 @@ function App() {
 
   useEffect(() => {
     dispatch({ type: 'GET_TODOS' });
+
+    console.log(initialState.todos);
   });
   
   const handleAddTodo = (e, todo) => {
@@ -17,11 +19,16 @@ function App() {
     dispatch({ type: 'ADD_TODO', payload: todo });
   };
 
+  const toggleCompleted = todo => {
+    dispatch({ type: 'TOGGLE_COMPLETED', payload: todo });
+  };
+
   return (
     <div className="App">
       <TodoList 
         todos={initialState.todos}
         handleAddTodo={handleAddTodo}
+        toggleCompleted={toggleCompleted}
       />
     </div>
   );

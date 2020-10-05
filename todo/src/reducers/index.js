@@ -33,6 +33,20 @@ export const reducer = (initialState, action) => {
                     }
                 ]
             };
+        case "TOGGLE_COMPLETED":
+            return {
+                todos: initialState.todos.map(todo => {
+                    if(todo.id === action.payload.id){
+                        return {
+                            id: action.payload.id,
+                            item: action.payload.item,
+                            completed: true
+                        };
+                    }
+
+                    return todo;
+                })
+            };
         case "GET_TODOS":
             return initialState;
         default:

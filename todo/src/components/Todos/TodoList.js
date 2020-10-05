@@ -6,7 +6,8 @@ import Todo from './Todo';
 const TodoList = props => {
     const { 
         todos,
-        handleAddTodo
+        handleAddTodo,
+        toggleCompleted
     } = props;
 
     return(
@@ -15,6 +16,7 @@ const TodoList = props => {
                 return <Todo
                             key={todo.id} 
                             todo={todo}
+                            toggleCompleted={toggleCompleted}
                         />
             })}
             <TodoForm handleAddTodo={handleAddTodo} />
